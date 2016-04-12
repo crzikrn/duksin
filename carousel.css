@@ -13,7 +13,7 @@ body {
 
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
 .navbar-wrapper {
-  position: absolute;
+  position: relative;
   top: 0;
   right: 0;
   left: 0;
@@ -98,9 +98,7 @@ body {
 
 @media (min-width: 768px) {
   /* Navbar positioning foo */
-  .navbar-wrapper {
-    margin-top: 20px;
-  }
+
   .navbar-wrapper .container {
     padding-right: 15px;
     padding-left: 15px;
