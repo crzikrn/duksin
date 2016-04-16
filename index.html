@@ -14,9 +14,31 @@
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
     <style>
     @import url(http://fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
     @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+    @media (max-width: 300px) {
+      .carosel-item {
+        width: 100%;
+      }
+    }
+    @media (min-width: 300px) {
+      .carosel-item {
+        width: 50%;
+      }
+    }
+    @media (min-width: 500px) {
+      .carosel-item {
+        width: 33.333%;
+      }
+    }
+    @media (min-width: 768px) {
+      .carosel-item {
+        width: 25%;
+      }
+    }
 
     body {
       /*font-family: 'jejumyeongjo';*/
@@ -70,6 +92,10 @@
       color: #fff;
     }
 
+    #lightgray {
+      color: #CCC;
+    }
+
     #gray {
       color: #BCBEC0;
     }
@@ -100,6 +126,102 @@
       border-top: 2px solid gray;
     }
 
+    .carousel-showmanymoveone .carousel-control {
+      width: 4%;
+      background-image: none;
+    }
+    .carousel-showmanymoveone .carousel-control.left {
+      margin-left: 15px;
+    }
+    .carousel-showmanymoveone .carousel-control.right {
+      margin-right: 15px;
+    }
+    .carousel-showmanymoveone .cloneditem-1,
+    .carousel-showmanymoveone .cloneditem-2,
+    .carousel-showmanymoveone .cloneditem-3 {
+      display: none;
+    }
+    @media all and (min-width: 768px) {
+      .carousel-showmanymoveone .carousel-inner > .active.left,
+      .carousel-showmanymoveone .carousel-inner > .prev {
+        left: -50%;
+      }
+      .carousel-showmanymoveone .carousel-inner > .active.right,
+      .carousel-showmanymoveone .carousel-inner > .next {
+        left: 50%;
+      }
+      .carousel-showmanymoveone .carousel-inner > .left,
+      .carousel-showmanymoveone .carousel-inner > .prev.right,
+      .carousel-showmanymoveone .carousel-inner > .active {
+        left: 0;
+      }
+      .carousel-showmanymoveone .carousel-inner .cloneditem-1 {
+        display: block;
+      }
+    }
+    @media all and (min-width: 768px) and (transform-3d), all and (min-width: 768px) and (-webkit-transform-3d) {
+      .carousel-showmanymoveone .carousel-inner > .item.active.right,
+      .carousel-showmanymoveone .carousel-inner > .item.next {
+        -webkit-transform: translate3d(50%, 0, 0);
+                transform: translate3d(50%, 0, 0);
+        left: 0;
+      }
+      .carousel-showmanymoveone .carousel-inner > .item.active.left,
+      .carousel-showmanymoveone .carousel-inner > .item.prev {
+        -webkit-transform: translate3d(-50%, 0, 0);
+                transform: translate3d(-50%, 0, 0);
+        left: 0;
+      }
+      .carousel-showmanymoveone .carousel-inner > .item.left,
+      .carousel-showmanymoveone .carousel-inner > .item.prev.right,
+      .carousel-showmanymoveone .carousel-inner > .item.active {
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+        left: 0;
+      }
+    }
+    @media all and (min-width: 992px) {
+      .carousel-showmanymoveone .carousel-inner > .active.left,
+      .carousel-showmanymoveone .carousel-inner > .prev {
+        left: -25%;
+      }
+      .carousel-showmanymoveone .carousel-inner > .active.right,
+      .carousel-showmanymoveone .carousel-inner > .next {
+        left: 25%;
+      }
+      .carousel-showmanymoveone .carousel-inner > .left,
+      .carousel-showmanymoveone .carousel-inner > .prev.right,
+      .carousel-showmanymoveone .carousel-inner > .active {
+        left: 0;
+      }
+      .carousel-showmanymoveone .carousel-inner .cloneditem-2,
+      .carousel-showmanymoveone .carousel-inner .cloneditem-3 {
+        display: block;
+      }
+    }
+    @media all and (min-width: 992px) and (transform-3d), all and (min-width: 992px) and (-webkit-transform-3d) {
+      .carousel-showmanymoveone .carousel-inner > .item.active.right,
+      .carousel-showmanymoveone .carousel-inner > .item.next {
+        -webkit-transform: translate3d(25%, 0, 0);
+                transform: translate3d(25%, 0, 0);
+        left: 0;
+      }
+      .carousel-showmanymoveone .carousel-inner > .item.active.left,
+      .carousel-showmanymoveone .carousel-inner > .item.prev {
+        -webkit-transform: translate3d(-25%, 0, 0);
+                transform: translate3d(-25%, 0, 0);
+        left: 0;
+      }
+      .carousel-showmanymoveone .carousel-inner > .item.left,
+      .carousel-showmanymoveone .carousel-inner > .item.prev.right,
+      .carousel-showmanymoveone .carousel-inner > .item.active {
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+        left: 0;
+      }
+    }
+
+
     #caret {
 
          text-align: center;
@@ -120,101 +242,103 @@
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
 </head>
+
   <body>
     <div class="center-container">
-      <div class="center-container">
       <div class="container">
+
+<!-- LOGO
+================================================== -->
         <div class="container">
           <h1 id="logo-high">DUKSIN<br> ENGINEERING</h1>
           <h4 id="logo-low" style="padding-left: 3px">덕신엔지니어링</h4>
         </div>
 
-
 <!-- NAVBAR
 ================================================== -->
-    <div class="navbar-wrapper">
-      <div class="container">
-        <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="navbar-wrapper">
           <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#"><img src=""/>DUKSIN</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="#">홈</a></li>
-                <li><a href="#about">회사소개</a></li>
-                <li><a href="#contact">오시는길</a></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">제품소개<span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#zas">ZAS금형소개</a></li>
-                    <li><a href="#alum">알루미늄소개</a></li>
+            <nav class="navbar navbar-inverse navbar-static-top">
+              <div class="container">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#"><img src=""/>DUKSIN</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">홈</a></li>
+                    <li><a href="#about">회사소개</a></li>
+                    <li><a href="#contact">오시는길</a></li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">제품소개<span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="#zas">ZAS금형소개</a></li>
+                        <li><a href="#alum">알루미늄소개</a></li>
+                      </ul>
+                    </li>
                   </ul>
-                </li>
-              </ul>
-            </div>
+                </div>
+              </div>
+            </nav>
           </div>
-        </nav>
-      </div>
-    </div>
+        </div>
 
 <!-- HEADER
 ================================================== -->
+        <div class="container-fluid header">
+          <div class="row">
+            <!-- Image Circle -->
+            <div class="col-md-4 col-lg-4">
+              <br>
+              <img src="images/aluminum.jpg" width="300px" height="300px" class="img-circle">
+            </div>
+            <div class="col-md-8 col-lg-8">
 
-      <div class="container-fluid header">
-        <div class="row">
-          <!-- Image Circle -->
-          <div class="col-md-4 col-lg-4">
-            <br>
-            <img src="images/aluminum.jpg" width="300px" height="300px" class="img-circle">
-          </div>
-          <div class="col-md-8 col-lg-8">
-
-            <h2 id="white">덕신 엔지니어링은 ZAS 금형 소재 및 <br>알루미늄 주물 소재 공급 전문 업체입니다.</h2>
-            <br>
-            <div class="row" >
-              <div id="gray" class="col-md-8 col-lg-8">
-                <p style="line-height: 1.6;">
-                  안녕하십니까? 덕신 엔지니어링 대표 백권일 입니다. 덕신 엔지니어링은 1986년 8월에 설립되었으며 덕신 목형이라는 상호아래 목형 및 수지금형 제작으로
-                  시작하여 현재는 ZAS 금형 소재 주조, 알루미늄 주물, 사형주조, 중력주조, 목형 등 다양한 품목들을 생산하고 있습니다.
-                  더불어 자동차 부품인 CYLINDER-HEAD, CLUTCH-HOUSING, T/M-HOUSING, MANIFOLD, OIL-PAN, BRACKET류 등 개발에서
-                  생산에 이르기까지 다품종 대량생산하는 소재 업체입니다.
-                  <br><br>
-                  저희 덕신 엔지니어링 전 사원은 다양한 방법으로 최상의 품질의 제품을 여러분께 공급하고자 노력해 나가겠습니다
-                </p>
-                <br>
-                <h4 id="white" style="text-align: right; padding-right:10px;">덕신엔지니어링 대표 백 권 일</h4>
-              </div>
-              <div class="col-md-4 col-lg-4" style="background: #212221;" width="200px">
-                <br>
-                <h5 style="color: #D1D3D4">대표전화<br><span id="t1">032-567-4016~8</span></h5>
-                <h5 style="color: #D1D3D4">팩스번호<br><span id="t1">032-567-4019</span></h5>
-                <h5 style="color: #D1D3D4">E-MAIL<br><span id="t2">dpsteng@dspteng.co.kr</span></h5>
-                <br>
-                <h4>신속하게 성심성의껏<br>답변해 드리겠습니다.</h4>
+              <h2 id="white">덕신 엔지니어링은 ZAS 금형 소재 및 <br>알루미늄 주물 소재 공급 전문 업체입니다.</h2>
+              <br>
+              <div class="row" >
+                <div id="gray" class="col-md-8 col-lg-8">
+                  <p style="line-height: 1.6;">
+                    안녕하십니까? 덕신 엔지니어링 대표 백권일 입니다. 덕신 엔지니어링은 1986년 8월에 설립되었으며 덕신 목형이라는 상호아래 목형 및 수지금형 제작으로
+                    시작하여 현재는 ZAS 금형 소재 주조, 알루미늄 주물, 사형주조, 중력주조, 목형 등 다양한 품목들을 생산하고 있습니다.
+                    더불어 자동차 부품인 CYLINDER-HEAD, CLUTCH-HOUSING, T/M-HOUSING, MANIFOLD, OIL-PAN, BRACKET류 등 개발에서
+                    생산에 이르기까지 다품종 대량생산하는 소재 업체입니다.
+                    <br><br>
+                    저희 덕신 엔지니어링 전 사원은 다양한 방법으로 최상의 품질의 제품을 여러분께 공급하고자 노력해 나가겠습니다
+                  </p>
+                  <br>
+                  <h4 id="white" style="text-align: right; padding-right:10px;">덕신엔지니어링 대표 백 권 일</h4>
+                </div>
+                <div class="col-md-4 col-lg-4" style="background: #212221;" width="200px">
+                  <br>
+                  <h5 style="color: #D1D3D4">대표전화<br><span id="t1">032-567-4016~8</span></h5>
+                  <h5 style="color: #D1D3D4">팩스번호<br><span id="t1">032-567-4019</span></h5>
+                  <h5 style="color: #D1D3D4">E-MAIL<br><span id="t2">dpsteng@dspteng.co.kr</span></h5>
+                  <br>
+                  <h4 id="gray">신속하게 성심성의껏<br>답변해 드리겠습니다.</h4>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="container" style="text-align: center;">
-        <a href="#contact" class="caret" id="caret">
-        </a>
-      </div>
+<!-- CARET
+================================================== -->
+        <div class="container-fluid" style="text-align: center;">
+          <a href="#contact" class="caret" id="caret">
+          </a>
+        </div>
+
     </div>
-  </div>
 
 <!-- SECTION 1 : 오시는 길
 ================================================== -->
-
-  <div class="container-center" style="background: #6D6E71;" id="contact">
+  <div class="container-fluid header" style="background: #6D6E71;" id="contact">
     <div class="row">
       <div class="container">
         <div class="col-lg-12">
@@ -247,138 +371,192 @@
         </div>
       </div>
     </div>
-    <div class="container" style="text-align: center;">
+
+<!-- CARET
+================================================== -->
+    <div class="container-fluid" style="text-align: center;">
       <a href="#about" class="caret" id="caret">
       </a>
     </div>
+
   </div>
 
-  <!-- SECTION 2 : 회사소개
-  ================================================== -->
+<!-- SECTION 2 : 회사소개
+================================================== -->
+  <div class="container-fluid" style="background: #FFF;" id="about">
+    <div class="row">
+      <div class="container">
+        <div class="col-lg-12">
+            <h2 id="darkgray">회사 소개</h2>
+            <hr>
+            <div class="row">
+              <div class="col-md-7 col-lg-7">
+                <h3 id="darkgray">연혁 및 현황</h3><br>
+                <hr>
+                  <h4 id="darkgray">회사 연혁</h4>
+                  <img class="img" src="images/history.png" alt="회사 연혁" width="457">
+                  <h4 id="darkgray">사업 현황</h4>
+                  <img class="img" src="images/current.png" alt="사업 현황" width="463">
 
-    <div class="container-fluid" style="background: #FFF;" id="about">
-      <div class="row">
-        <div class="container">
-          <div class="col-lg-12">
-              <h2 id="darkgray">회사 소개</h2>
-              <hr>
-              <div class="row">
-                <div class="col-md-7 col-lg-7">
-                  <h3 id="darkgray">연혁 및 현황</h3><br>
-                  <hr>
-                    <h4 id="darkgray">회사 연혁</h4>
-                    <img class="img" src="images/history.png" alt="회사 연혁" width="457">
-                    <h4 id="darkgray">사업 현황</h4>
-                    <img class="img" src="images/current.png" alt="사업 현황" width="463">
-
-                </div>
-                <div class="col-md-5 col-lg-5">
-                    <h3 id="darkgray">사업 분야</h3><br>
-                    <hr>
-                    <h4 id="darkgray">&nbsp;</h4>
-                    <img class="img" src="images/areas.png" alt="사업분야" width="313">
-
-                </div>
               </div>
+              <div class="col-md-5 col-lg-5">
+                  <h3 id="darkgray">사업 분야</h3><br>
+                  <hr>
+                  <h4 id="darkgray">&nbsp;</h4>
+                  <img class="img" src="images/areas.png" alt="사업분야" width="313">
 
-          </div>
+              </div>
+            </div>
+
         </div>
-      </div>
-      <div class="container" style="text-align: center;">
-        <a href="#products" class="caret" id="caret" style="border-top: 20px solid #6D6E71;">
-        </a>
       </div>
     </div>
 
-    <!-- SECTION 3 : 사업제품
-    ================================================== -->
+<!-- CARET
+================================================== -->
+    <div class="container-fluid" style="text-align: center;">
+      <a href="#products" class="caret" id="caret" style="border-top: 20px solid #6D6E71;">
+      </a>
+    </div>
+
+  </div>
+
+<!-- SECTION 3 : 사업 제품
+================================================== -->
+  <div class="container-fluid" style="background: #ABB4BE;" id="products">
+    <div class="row">
+      <div class="container">
+        <div class="col-lg-12">
+            <h2 id="white">제품 소개</h2>
+            <hr>
+            <div class="row">
+              <div class="col-md-6 col-lg-6">
+                <h3 id="white">ZAS 금형 소재</h3>
+                <hr>
+                <div class="row" id="darkgray">
+                  <div class="col-md-3">
+                    <p><strong>
+                      적용 분야 :
+                      <br><br>
+                      작업 방법 :
+                    </strong></p>
+                  </div>
+                  <div class="col-md-9">
+                    <p>
+                      사출 금형 및 프레스 금형<br><br>
+                      스티로폼 으로 모형을 만들고 쇳물을<br>
+                      주입하는 방식인 풀 몰딩 방식으로 제작.<br>
+                      금형의 기본 크기는 제한되어 있지 않음<br>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-6">
+                <h3 id="white">알루미늄 소재</h3>
+                <hr>
+                <div class="row" id="darkgray">
+                  <div class="col-md-3">
+                    <p><strong>
+                      목형제작 :
+                      <br><br>
+                      금형제작 :
+                      <br><br>
+                      사형주조 :
+                      <br><br>
+                      중력주조 :
+                    </strong></p>
+                  </div>
+                  <div class="col-md-9">
+                    <p>
+                      스치로폼 형 , 주물 목형
+                      <br><br>
+                      수지금형 , 중력주조 금형, AL금형,
+                      <br><br>
+                      시작품 및 대형물 ,  대량 및 소량 생산
+                      <br><br>
+                      AL 자동차 부품 및 기타 제품
+                    </p>
+                  </div>
+                </div>
 
 
+              </div>
+            </div>
 
-
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
-    <div class="container marketing">
-
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-lg-4">
-          <img class="img-circle" src="images/logo1.jpg" alt="Generic placeholder image" width="140" height="140">
-          <h2>인사말</h2>
-          <p>   안녕하십니까? 덕신 엔지니어링 대표 백권일 입니다.
-
-                   저희 덕신 엔지니어링은 1986년 8월에 설립되었으며
-                   덕신목형이라는 상호아래 목형 및 수지금형 제작으로 시작하여
-
-                   현재는 ZAS 금형 소재 주조, 알루미늄 주물, 사형주조, 중력주조, 목형등
-                   다양한 품목들을 생산하고 있습니다.
-
-                   더불어 자동차 부품인 CYLINDER-HEAD, CLUTCH-HOUSING,
-                   T/M-HOUSING, MANIFOLD, OIL-PAN, BREACKET류등  개발에서
-                   생산에 이르기까지 다품종 대량생산하는 소재 업체입니다.
-
-                   저희 덕신 엔지니어링 전 사원은 다양한 방법으로
-                   최상의 품질의 제품을 여러분께 공급하고자 노력해 나가겠습니다.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="images/logo2.png" alt="Generic placeholder image" width="140" height="140">
-          <h2>주요 고객</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="images/logo4.jpg" alt="Generic placeholder image" width="140" height="140">
-          <h2>오시는 길</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
-
-
-      <!-- START THE FEATURETTES -->
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7 col-md-push-5">
-          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5 col-md-pull-7">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
         </div>
       </div>
+    </div>
 
-      <hr class="featurette-divider">
+<!-- CARET
+================================================== -->
+    <div class="container-fluid" style="text-align: center;">
+      <a href="#products" class="caret" id="caret" style="border-top: 20px solid #FFF;">
+      </a>
+    </div>
 
-      <!-- /END THE FEATURETTES -->
+  </div>
+
+
+<!-- SECTION 3-A : ZAS
+================================================== -->
+  <!-- START THE FEATURETTES -->
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading" id="white">ZAS 사출금형 및 프레스 금형 <span class="text-muted">It'll blow your mind.</span></h2>
+      <p class="lead" id="lightgray">
+        ZAS 합금은 2차 세계 대전중 전투기를 양산하는데 필요한 부품을 생산하기 위한 금형을
+        단기간에 제작하기 위하여 개발된 합금으로, 모든 부품의 시작금형 소재로 사용되고 있으며,
+        주로 자동차나 가전 제품등의 프레스금형 및 사출금형의 시작 금형 소재로 많이 쓰이고 있다.
+
+        또한, ZAS 금형 소재는 가공후 주조결함이 없으며, 가공이 용이하여 가공시간이 Fe 계열보다
+        짧은 이점이 있고, 설계변경 등 수정이 용이하여 신제품 개발금형에 적합하다.<br><br>
+      </p>
+
+    
+
+    </div>
+
+    <div class="col-md-5">
+      <img class="featurette-image img-responsive center-block"  src="images/about.jpg" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+    </div>
+
+    <div class="row">
+
+  </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7 col-md-push-5">
+      <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
+      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    </div>
+    <div class="col-md-5 col-md-pull-7">
+      <img class="featurette-image img-responsive center-block" src="images/about.jpg" alt="Generic placeholder image">
+    </div>
+  </div>
+<!-- CAROUSEL -->
+
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    </div>
+    <div class="col-md-5">
+      <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <!-- /END THE FEATURETTES -->
 
 
       <!-- FOOTER -->
@@ -395,9 +573,53 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="js/bootstrap.min.js"></script>
+    <script>
+    (function(){
+      // setup your carousels as you normally would using JS
+      // or via data attributes according to the documentation
+      // http://getbootstrap.com/javascript/#carousel
+      $('#carousel123').carousel({ interval: 1000 });
+      $('#carouselABC').carousel({ interval: 3600 });
+    }());
 
-    </div>
+    (function(){
+      $('.carousel-showmanymoveone .item').each(function(){
+        var itemToClone = $(this);
+
+        for (var i=1;i<4;i++) {
+          itemToClone = itemToClone.next();
+
+          // wrap around if at end of item collection
+          if (!itemToClone.length) {
+            itemToClone = $(this).siblings(':first');
+          }
+
+          // grab item, clone, add marker class, add to collection
+          itemToClone.children(':first-child').clone()
+            .addClass("cloneditem-"+(i))
+            .appendTo($(this));
+        }
+      });
+    }());
+    </script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      $(function() {
+      $('a[href*="#"]:not([href="#"])').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+          if (target.length) {
+            $('html, body').animate({
+              scrollTop: target.offset().top
+            }, 1000);
+            return false;
+          }
+        }
+      });
+    });
+    </script>
+
   </body>
 </html>
 
